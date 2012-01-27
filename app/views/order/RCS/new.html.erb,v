@@ -1,0 +1,128 @@
+head	1.5;
+access;
+symbols;
+locks
+	george:1.5; strict;
+comment	@# @;
+
+
+1.5
+date	2011.08.11.19.54.28;	author george;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2011.04.14.23.13.17;	author george;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.02.06.01.12.25;	author george;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.08.23.06.17.09;	author george;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.06.21.04.16.13;	author george;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@<%= flash[:notice] %>
+<fieldset>
+ <legend> Order Items</legend>
+  sum total: <%= @@order_items.inject(0.0) {|sum, i| sum + i['price'].to_f } %>
+<table>
+<tr>
+<th>ID</th>
+<th>Song Name</th>
+<th>Price</th>
+</tr>
+
+<% @@order_items.each do |item| %>
+  <tr>
+    <td><%= item['id'] %></td>
+    <td><%= item['song_name'] %></td>
+    <td><%= item['price']%></td>
+  </tr>
+<% end %>
+</table>
+</fieldset>
+ <%= form_tag({:action => 'create', :controller => 'order'}, :method => :post) do %> 
+ <b> Buyer's id:</b>  <%= text_field_tag :buyer_id%><br/>
+ <b> Buyer's PIN:</b>  <%= password_field_tag :pin%><br/>
+ <%= submit_tag "Create"%>
+ <% end %>
+<p>
+ <b> Note: Single Access Token:</b> <%= @@api_key %>
+</p>
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d22 1
+a22 1
+ <b> Buyer's mobile:</b>  <%= text_field_tag :mobile%><br/>
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d21 1
+a21 1
+ <% form_tag({:action => 'create', :controller => 'order'}, :method => :post) do %> 
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d2 3
+a4 1
+<h1> New Order</h1>
+d20 1
+a20 5
+
+ <b> sum total: <%= @@order_items.inject(0.0) {|sum, i| sum + i['price'].to_f } %></b> </br>
+ <b> Single Access Token: <%= @@api_key %></b>
+<br />
+
+d22 2
+a23 2
+ <b> Buyer's phone number:</b>  <%= text_field_tag :mobile%></br>
+ <b> Buyer's PIN:</b>  <%= password_field_tag :pin%></br>
+d26 3
+a28 1
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+@

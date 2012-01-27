@@ -1,0 +1,8 @@
+
+ <% form_tag url_for(:controller => 'order', :action=>'update', :id=> order['id']), :method => 'put' do %>
+   <%= render :partial => "flat_p" %>
+   <% if order['status'] == 'open'%> 
+   <%= submit_tag( 'Execute') %> 
+   <% end %>
+   <%= submit_tag( 'Cancel') %> 
+   <% end %>

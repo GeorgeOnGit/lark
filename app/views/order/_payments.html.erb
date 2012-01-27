@@ -1,0 +1,30 @@
+
+<fieldset>
+<legend><b>Payments: </b> sum total <%=@order['sum_total']%> USD
+</legend>
+<table>
+<tr>
+ <th>name</th>
+ <th>unite-price</th>
+ <th>qty</th>
+ <th>Trade-in-value</th>
+</tr>
+<% @payments.each do |  p |%>
+<tr>
+ <td><%=p['name'] %></td>
+ <td><%=p['price'] %></td>
+ <td><%=p['qty'] %></td>
+ <td><%= number_to_currency(p['qty'].to_f * p['price'].to_f) %></td>
+ <td><%= link_to_remote('Remove', :url => { :action => 'trade_out', :id => p['id']}) unless p['name']=='USD'  %></td>
+</tr>
+<% end %>
+</table>
+<% form_remote_tag :url => { :action => 'trade_in', :controller => 'order'} do  %>
+ <%=select_tag 'product_id',  options_for_select(@pay_options) %>
+ <%= select_tag :qty, options_for_select(0.upto(@order['sum_total'].to_i)) %>
+ <%= hidden_field_tag :order_id, @order['id'] %>
+ <%= submit_tag 'Trade in' %>
+<% end %>
+</fieldset>
+
+

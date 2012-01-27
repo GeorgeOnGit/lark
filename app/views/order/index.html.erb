@@ -1,0 +1,23 @@
+<h1>Cart Items</h1>
+<%= flash[:notice] %>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Song Name</th>
+    <th>Price</th>
+  </tr>
+
+<% @cart_items.each do |item| %>
+  <tr>
+    <td><%= item[:id] %></td>
+    <td><%= item[:song_name] %></td>
+    <td><%= item[:price]%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+ <%= link_to 'Proceed with purchase', :controller => "order", :action => 'new' %>
+<%= @result %>
+

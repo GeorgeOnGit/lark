@@ -1,0 +1,30 @@
+head	1.1;
+access;
+symbols;
+locks
+	george:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2011.04.14.23.13.22;	author george;	state Exp;
+branches;
+next	;
+
+
+desc
+@First Rails3
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@# Be sure to restart your server when you modify this file.
+
+# Add new mime types for use in respond_to blocks:
+# Mime::Type.register "text/richtext", :rtf
+# Mime::Type.register_alias "text/html", :iphone
+@

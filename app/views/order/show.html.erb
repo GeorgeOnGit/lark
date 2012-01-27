@@ -1,0 +1,26 @@
+<fieldset>
+<legend>  Order status: <b><%= @order['status']%></b> </legend> 
+<p>
+ <% if flash[:notice] %>
+ <%= flash[:notice] %>
+ <% end %>
+ <b>Order# </b>
+ <%= @order['id']%> <br/>
+ <b>Order Type </b>
+ <%= @order['order_type']%> <br/>
+ <b>Created by</b>
+ <%=  @order['creator']%> <br/>
+ <b>Seller:</b>
+ <%= @order['seller']%> <br/>
+ <b>  Buyer:</b>
+<%= @order['buyer'] %> <br/>
+ <b>  Status: </b>
+ <%= @order['status']%> <br/>
+</p>
+<%= render :partial => "order" %>
+</fieldset>
+<% if @order['status']=='open'%>
+<%= render :partial=>'buttons', :locals=>{:order=>@order} %>
+<% end %>
+<%=link_to  "Restart", root_url %>
+

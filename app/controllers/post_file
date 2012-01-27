@@ -1,0 +1,5 @@
+<form method="POST" enctype='multipart/form-data' action="upload.cgi">
+      <input type=file name=upload>
+      <input type=submit name=press value="OK">
+</form>
+

@@ -1,0 +1,27 @@
+head	1.1;
+access;
+symbols;
+locks
+	george:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2010.09.05.22.48.47;	author george;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+  <b>Enter your wireless code:</b>
+  <%= text_field_tag('flat_p_code', nil, :maxlength => 6, :size => 8) %>
+@

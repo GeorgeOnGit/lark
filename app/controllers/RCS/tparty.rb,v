@@ -1,0 +1,130 @@
+head	1.3;
+access;
+symbols;
+locks
+	george:1.3; strict;
+comment	@# @;
+
+
+1.3
+date	2011.04.14.23.13.21;	author george;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.08.26.07.42.20;	author george;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.08.26.07.08.06;	author george;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@#!/usr/local/bin/ruby   
+require 'rubygems'
+require 'json'
+require 'httparty'
+
+class Thirdrock 
+ include HTTParty
+ base_uri 'localhost:3000'
+
+ def initialize 
+   @@cart_items = [{:song_name=>"Pine away", :id => 3, :price => 1, :qty => 3}]
+ end
+ # 
+ def re_key 
+ options = { :digest_auth => {:username => "term1", :password => "1234"} }
+ @@api_key  = self.class.get('/users/11/rekey.json', options)
+ puts @@api_key
+ end
+ #
+ #
+ def create
+ order={:memo => @@cart_items.to_json, :order_type => 'checkout', :sum_total => 42.0, :mobile => '9196095443', :pin => '1234'}
+  result = self.class.post("/orders.json", 
+                       :body => { :checkout => order, :order_type=> 'checkout', :user_credentials => @@api_key})
+#  result  = JSON.parse r.body 
+  @@order_id = result["id"]
+  puts "Order_id = #{@@order_id}"
+ end
+ #  
+ def show
+  result = self.class.get("/orders/#{@@order_id}.json", :query => { :user_credentials => @@api_key})
+  @@order = result["order"]
+  puts @@order['memo']
+ end 
+ #
+ def execute
+  puts "Enter buyer_code:"
+  p_code = gets.chomp 
+  r = self.class.put("/orders/#{@@order_id}/execute.json",
+                   :body => {:buy_code => p_code , :user_credentials => @@api_key})
+  puts "execute result= #{r['status']} order_id= #{r['id']}"
+ end
+end
+
+
+while true
+   p = Thirdrock.new
+   p.re_key
+
+   puts "Hit enter to create order:"
+   gets
+   p.create
+
+   p.show
+
+   p.execute
+end
+@
+
+
+1.2
+log
+@use :body for post and put.
+use :query for get.
+@
+text
+@d15 2
+a16 2
+ options = { :digest_auth => {:username => "wala", :password => "1234"} }
+ @@api_key  = self.class.get('/users/142/rekey.json', options)
+d31 1
+a31 1
+  result = self.class.get("/orders/987.json", :query => { :user_credentials => @@api_key})
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d16 2
+a17 3
+
+   @@api_key  = self.class.get('/users/142/rekey.json', options)
+   puts @@api_key
+d23 1
+a23 1
+  r = self.class.post("/orders.json", 
+d25 1
+a25 1
+  result  = JSON.parse r.body 
+d31 1
+a31 2
+  r = self.class.get("/orders/987.json", :query => { :user_credentials => @@api_key})
+  result = JSON.parse r.body
+@

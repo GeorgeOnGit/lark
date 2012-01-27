@@ -1,0 +1,23 @@
+<table>
+  <tr> 
+   <th>ID</th>
+   <th>Song Title</th> 
+   <th>Qty</th> 
+   <th>Unit Price</th> 
+   <th>sub-total</th> 
+  </tr>
+<% order_items = JSON.parse @order['memo'] %>
+<% order_items.each do | order_item | %>
+  <tr>
+    <td><%= order_item['id']%></td>
+    <td><%= order_item['song_name']%></td>
+    <td><%= order_item['qty']%></td>
+    <td><%= number_to_currency(order_item['price'])%></td>
+    <td><%= number_to_currency(order_item['price'].to_f * order_item['qty'].to_f)%></td>
+  </tr>
+<% end %>
+</table>
+<div id="payments">
+<%= render :partial=> 'payments'%>
+</div>
+

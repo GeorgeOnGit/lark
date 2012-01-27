@@ -1,0 +1,83 @@
+head	1.4;
+access;
+symbols;
+locks
+	george:1.4; strict;
+comment	@# @;
+
+
+1.4
+date	2011.04.14.23.13.16;	author george;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.02.06.01.12.23;	author george;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2010.06.21.04.34.30;	author george;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.06.21.04.16.10;	author george;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Restful checkout order service client demo</title>
+  <%= stylesheet_link_tag "song" %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body id="admin">
+      <%= yield :layout %>
+</body>
+</html>
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d6 1
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@a8 3
+<% if flash[:notice]%>
+<div id="notice"><%= flash[:notice] %> </div>
+<% end %>
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d5 1
+a5 1
+  <title>Restful service client demo</title>
+@

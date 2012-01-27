@@ -1,0 +1,28 @@
+<%= flash[:notice] %>
+<fieldset>
+ <legend> Order Items</legend>
+  sum total: <%= @order_items.inject(0.0) {|sum, i| sum + i['price'].to_f } %>
+<table>
+<tr>
+<th>ID</th>
+<th>Song Name</th>
+<th>Price</th>
+</tr>
+
+<% @order_items.each do |item| %>
+  <tr>
+    <td><%= item['id'] %></td>
+    <td><%= item['song_name'] %></td>
+    <td><%= item['price']%></td>
+  </tr>
+<% end %>
+</table>
+</fieldset>
+ <%= form_tag({:action => 'create', :controller => 'order'}, :method => :post) do %> 
+ <b> Buyer's id:</b>  <%= text_field_tag :buyer_id%><br/>
+ <b> Buyer's PIN:</b>  <%= password_field_tag :pin%><br/>
+ <%= submit_tag "Create"%>
+ <% end %>
+<p>
+ <b> Note: Single Access Token:</b> <%= @api_key %>
+</p>
