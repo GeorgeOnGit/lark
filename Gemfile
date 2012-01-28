@@ -6,7 +6,7 @@ gem 'rails', '3.0.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+  gem 'pg'
   gem 'json', '1.5.1'
   gem 'httparty', '0.7.4'
 
