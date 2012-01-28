@@ -7,29 +7,12 @@ gem 'rails', '3.0.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-  gem "authlogic"
-
-  gem "acts_as_audited", "2.0.0.rc7"
-
-  gem  'thinking-sphinx', :require => 'thinking_sphinx'
-
-  gem 'will_paginate', "~> 3.0.pre2"
-
-  gem 'whenever'
-
-  gem 'ajaxful_rating'
-
-  gem 'acts_as_commentable'
-
-  gem 'geokit-rails3'
-
-  gem 'httparty'
+  gem 'json', '1.5.1'
+  gem 'httparty', '0.7.4'
 
   gem 'mysql2'
   gem 'mysql'
 
-  gem 'sms_fu'
-  gem 'pony'
 
   gem 'dynamic_form'
 
@@ -56,12 +39,5 @@ gem 'rails', '3.0.5'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
  group :development, :test do
-   gem "rspec-rails", ">=2.0.0"
-   gem "cucumber-rails", ">= 0.3.2"
-   gem 'webrat', ">= 0.7.2"
-   gem "database_cleaner", ">=0.5.2"
-   gem 'selenium-client', '>=1.2.18'
-   gem "autotest"
-   gem "autotest-rails"
  end
 
