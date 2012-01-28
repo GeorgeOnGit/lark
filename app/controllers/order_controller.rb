@@ -17,8 +17,8 @@ class OrderController < ApplicationController
   @order_items = JSON.parse session[:cart]
   #get an single_access_token
   @user_id = 11 
-  @api_key  = self.class.get("/users/#{@user_id}/rekey.json",  :digest_auth => {:username => "term1", :password => "1234"}) 
-  if @api_key.to_s.grep(/Access Denied/).empty?
+  @api_key = self.class.get("/users/#{@user_id}/rekey.json",  :digest_auth => {:username => "term1", :password => "1234"}) 
+  if !@api_key.to_s.include?("Access Denied")
    session[:api_key] = @api_key
   else
    flash[:notice] = @api_key
