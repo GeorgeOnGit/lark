@@ -1,8 +1,7 @@
 class OrderController < ApplicationController
  layout "lark"
  include HTTParty
-# base_uri 'trial.wemakedo.com'
- base_uri 'localhost:3000'
+ base_uri 'trial.wemakedo.com'
 
   def index 
   #The content of the cart will be serialized and saved in a memo. Its format is totally up to the user. In this case it is an array of hashes.
