@@ -1,7 +1,8 @@
 class OrderController < ApplicationController
  layout "lark"
  include HTTParty
- base_uri 'trial.wemakedo.com'
+# base_uri 'trial.wemakedo.com'
+ base_uri 'localhost:3000'
 
   def index 
   #The content of the cart will be serialized and saved in a memo. Its format is totally up to the user. In this case it is an array of hashes.
@@ -17,8 +18,13 @@ class OrderController < ApplicationController
   @order_items = JSON.parse session[:cart]
   #get an single_access_token
   @user_id = 11 
-  @api_key = self.class.get("/users/#{@user_id}/rekey.json",  :digest_auth => {:username => "term1", :password => "1234"}) 
-  if !@api_key.to_s.include?("Access Denied")
+  response = self.class.get("/users/#{@user_id}/rekey.json",  :digest_auth => {:username => "term1", :password => "1234"}) 
+  @api_key = response['api_token']
+  logger.info "response= #{response.to_yaml}" 
+  logger.info "body= #{response.body.class}" 
+  logger.info "code= #{response.code}" 
+  logger.info "message= #{response.message}" 
+  if !@api_key.include?("Access Denied")
    session[:api_key] = @api_key
   else
    flash[:notice] = @api_key

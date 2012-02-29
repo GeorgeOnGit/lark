@@ -15,7 +15,8 @@
  <td><%=p['price'] %></td>
  <td><%=p['qty'] %></td>
  <td><%= number_to_currency(p['qty'].to_f * p['price'].to_f) %></td>
- <td><%= link_to_remote('Remove', :url => { :action => 'trade_out', :id => p['id']}) unless p['name']=='USD'  %></td>
+ <td><%= link_to('Remove', { :action => 'trade_out', :id => p['id']}, :remote=>true) unless p['name']=='USD'  %></td>
+ <td><%# link_to('Remove', payment_path(p), :method=>:delete, :remote=>true) %></td>
 </tr>
 <% end %>
 </table>

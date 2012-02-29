@@ -3,15 +3,12 @@ source  "http://gems.github.com"
 source 'http://gemcutter.org/'
 
 gem 'rails', '3.0.5'
+gem 'mysql2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-  gem 'pg'
-  gem 'json', '1.5.1'
-  gem 'httparty', '0.7.4'
-
-  gem 'mysql2'
-  gem 'mysql'
+  gem 'json'
+  gem 'httparty'
 
 
   gem 'dynamic_form'
