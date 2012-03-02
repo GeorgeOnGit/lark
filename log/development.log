@@ -1,0 +1,127 @@
+DEPRECATION WARNING: ActionController::Routing::Routes is deprecated. Instead, use Rails.application.routes. (called from <top (required)> at /home/george/deleteme/lark/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/george/deleteme/lark/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-01 20:30:58 -0800
+  Processing by OrderController#index as HTML
+Rendered order/index.html.erb within layouts/lark (4.7ms)
+Completed 200 OK in 11ms (Views: 9.9ms)
+
+
+Started GET "/order/new" for 127.0.0.1 at 2012-03-01 20:31:00 -0800
+  Processing by OrderController#new as HTML
+response= ---
+api_token: muCAPjDJU8Ynvpaf6Vj
+body= String
+code= 200
+message= OK
+Rendered order/new.html.erb within layouts/lark (6.0ms)
+Completed 200 OK in 670ms (Views: 12.6ms)
+
+
+Started POST "/order/create" for 127.0.0.1 at 2012-03-01 20:31:11 -0800
+  Processing by OrderController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeDKgNtGJRftqqwrNq1nUB8hXAaetqrgrTTlp7jX+3E=", "buyer_id"=>"4", "pin"=>"1234", "commit"=>"Create"}
+Redirected to http://wemakedo:3000/order/show/589
+Completed 302 Found in 5172ms
+
+
+Started GET "/order/show/589" for 127.0.0.1 at 2012-03-01 20:31:16 -0800
+  Processing by OrderController#show as HTML
+  Parameters: {"id"=>"589"}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__payments_html_erb___543645766__614981698__131687426 at /home/george/deleteme/lark/app/views/order/_payments.html.erb:23)
+Rendered order/_payments.html.erb (5.8ms)
+Rendered order/_order.html.erb (135.0ms)
+Rendered order/_flat_p.html.erb (0.8ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__execute_form_html_erb__164878676_89293090_915560415 at /home/george/deleteme/lark/app/views/order/_execute_form.html.erb:2)
+Rendered order/_execute_form.html.erb (5.3ms)
+Rendered order/_buttons.html.erb (8.2ms)
+Rendered order/show.html.erb within layouts/lark (152.8ms)
+Completed 200 OK in 519ms (Views: 160.8ms)
+
+
+Started POST "/order/trade_in" for 127.0.0.1 at 2012-03-01 20:31:21 -0800
+  Processing by OrderController#trade_in as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeDKgNtGJRftqqwrNq1nUB8hXAaetqrgrTTlp7jX+3E=", "product_id"=>"2", "qty"=>"18", "order_id"=>"589", "commit"=>"Trade in"}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__payments_html_erb___543645766__613494848__131687426 at /home/george/deleteme/lark/app/views/order/_payments.html.erb:23)
+Rendered order/_payments.html.erb (6.7ms)
+Rendered order/_order.html.erb (12.6ms)
+Rendered order/_flat_p.html.erb (6.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__execute_form_html_erb__164878676__613657718_915560415 at /home/george/deleteme/lark/app/views/order/_execute_form.html.erb:2)
+Rendered order/_execute_form.html.erb (10.8ms)
+Rendered order/_buttons.html.erb (13.3ms)
+Rendered order/show.html.erb within layouts/lark (36.6ms)
+Completed 200 OK in 1001ms (Views: 44.2ms)
+
+
+Started POST "/order/update/589" for 127.0.0.1 at 2012-03-01 20:31:39 -0800
+  Processing by OrderController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeDKgNtGJRftqqwrNq1nUB8hXAaetqrgrTTlp7jX+3E=", "flat_p_code"=>"589", "commit"=>"Execute", "id"=>"589"}
+Redirected to http://wemakedo:3000/order/show/589
+Completed 302 Found in 358ms
+
+
+Started GET "/order/show/589" for 127.0.0.1 at 2012-03-01 20:31:40 -0800
+  Processing by OrderController#show as HTML
+  Parameters: {"id"=>"589"}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__payments_html_erb___543645766_87464280__131687426 at /home/george/deleteme/lark/app/views/order/_payments.html.erb:23)
+Rendered order/_payments.html.erb (15.6ms)
+Rendered order/_order.html.erb (23.5ms)
+Rendered order/_flat_p.html.erb (2.5ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__execute_form_html_erb__164878676_85953370_915560415 at /home/george/deleteme/lark/app/views/order/_execute_form.html.erb:2)
+Rendered order/_execute_form.html.erb (7.1ms)
+Rendered order/_buttons.html.erb (11.7ms)
+Rendered order/show.html.erb within layouts/lark (44.1ms)
+Completed 200 OK in 529ms (Views: 57.2ms)
+
+
+Started GET "/order/trade_out/361" for 127.0.0.1 at 2012-03-01 20:31:52 -0800
+  Processing by OrderController#trade_out as HTML
+  Parameters: {"id"=>"361"}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__payments_html_erb___543645766__611866428__131687426 at /home/george/deleteme/lark/app/views/order/_payments.html.erb:23)
+Rendered order/_payments.html.erb (5.9ms)
+Rendered order/_order.html.erb (11.6ms)
+Rendered order/_flat_p.html.erb (0.8ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__execute_form_html_erb__164878676__613048468_915560415 at /home/george/deleteme/lark/app/views/order/_execute_form.html.erb:2)
+Rendered order/_execute_form.html.erb (5.6ms)
+Rendered order/_buttons.html.erb (8.2ms)
+Rendered order/show.html.erb within layouts/lark (29.2ms)
+Completed 200 OK in 443ms (Views: 34.6ms)
+
+
+Started POST "/order/update/589" for 127.0.0.1 at 2012-03-01 20:31:56 -0800
+  Processing by OrderController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeDKgNtGJRftqqwrNq1nUB8hXAaetqrgrTTlp7jX+3E=", "flat_p_code"=>"589", "commit"=>"Execute", "id"=>"589"}
+Redirected to http://wemakedo:3000/order/show/589
+Completed 302 Found in 383ms
+
+
+Started GET "/order/show/589" for 127.0.0.1 at 2012-03-01 20:31:56 -0800
+  Processing by OrderController#show as HTML
+  Parameters: {"id"=>"589"}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__payments_html_erb___543645766__609895258__131687426 at /home/george/deleteme/lark/app/views/order/_payments.html.erb:23)
+Rendered order/_payments.html.erb (5.8ms)
+Rendered order/_order.html.erb (14.0ms)
+Rendered order/_flat_p.html.erb (0.8ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__execute_form_html_erb__164878676__610005628_915560415 at /home/george/deleteme/lark/app/views/order/_execute_form.html.erb:2)
+Rendered order/_execute_form.html.erb (5.2ms)
+Rendered order/_buttons.html.erb (7.7ms)
+Rendered order/show.html.erb within layouts/lark (36.3ms)
+Completed 200 OK in 672ms (Views: 41.4ms)
+
+
+Started POST "/order/update/589" for 127.0.0.1 at 2012-03-01 20:32:13 -0800
+  Processing by OrderController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeDKgNtGJRftqqwrNq1nUB8hXAaetqrgrTTlp7jX+3E=", "flat_p_code"=>"842", "commit"=>"Execute", "id"=>"589"}
+Redirected to http://wemakedo:3000/order/show/589
+Completed 302 Found in 2685ms
+
+
+Started GET "/order/show/589" for 127.0.0.1 at 2012-03-01 20:32:16 -0800
+  Processing by OrderController#show as HTML
+  Parameters: {"id"=>"589"}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_order__payments_html_erb___543645766__614108858__131687426 at /home/george/deleteme/lark/app/views/order/_payments.html.erb:23)
+Rendered order/_payments.html.erb (10.6ms)
+Rendered order/_order.html.erb (16.6ms)
+Rendered order/show.html.erb within layouts/lark (28.7ms)
+Completed 200 OK in 402ms (Views: 43.3ms)
