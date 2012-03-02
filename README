@@ -1,2 +1,10 @@
 This is a sample code for setting up RESTful clients for wemakedo services.
 
+Install:
+
+~$git clone git@github.com:GeorgeOnGit/lark.git
+
+~$cd lark
+
+~$rails s
+
